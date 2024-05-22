@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -34,7 +34,7 @@ function App() {
   };
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar
           title="TextUtils"
           about="About Us"
@@ -47,23 +47,23 @@ function App() {
         {/* default props */}
         {/* <Navbar title = "TextUtils" about = "About Us"/> */}
         <div className="container my-3">
-          {/* <Routes> */}
-            {/* <Route exact path="/about" element={<About />} /> */}
+          <Routes>
+            <Route exact path="/about" element={<About mode={mode}/>} />
 
-            {/* <Route
+            <Route
               exact
               path="/"
-              element={ */}
+              element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter Text to analyze below"
+                  heading="Try TextUtils - WordCounter, Character Counter, Copy Text, Remove Extra Spaces"
                   mode={mode}
                 />
-              {/* }
+               }
             />
-          </Routes> */}
+          </Routes>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
